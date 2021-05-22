@@ -1,1 +1,25 @@
-/* No CSS *//*# sourceMappingURL=portfolio.css.map */
+body {
+  margin: 0;
+  background-color: #2a2836;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.portfolio__headings {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.portfolio__heading-1 {
+  font-size: 4rem;
+}
+
+.portfolio__heading-2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+/*# sourceMappingURL=portfolio.css.map */
