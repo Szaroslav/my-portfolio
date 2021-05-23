@@ -36,15 +36,20 @@ h1, h2, h3, h4, h5, h6 {
             background-image: linear-gradient(135deg, $rose-light, $rose-dark);
         }
 
-        .bg__element {
+        .bg__wrapper {
             position: absolute;
+
+            .bg__element {
+                width: 100%;
+                height: 100%;
+            }
 
             &:nth-child(1) {
                 width: 150px;
                 height: 150px;
                 top: 100px;
                 left: 50px;
-                transform: rotateZ(20deg);
+                // transform: rotateZ(20deg);
             }
 
             &:nth-child(2) {
@@ -52,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
                 height: 500px;
                 top: -130px;
                 right: -40px;
-                transform: rotateZ(75deg);
+                // transform: rotateZ(75deg);
             }
 
             &:nth-child(3) {
@@ -60,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
                 height: 100px;
                 bottom: 120px;
                 right: 350px;
-                transform: rotateZ(-12deg);
+                // transform: rotateZ(-12deg);
             }
 
             &:nth-child(4) {
@@ -68,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
                 height: 400px;
                 bottom: -45px;
                 left: -100px;
-                transform: rotateZ(65deg);
+                // transform: rotateZ(65deg);
             }
         }
     }
