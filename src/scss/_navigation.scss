@@ -3,7 +3,7 @@
     padding-top: 24px;
     padding-bottom: 24px;
     font-family: $secondary-font;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 500;
     position: fixed;
     top: 0;
@@ -20,46 +20,6 @@
         margin-left: auto;
         padding: 0;
         list-style-type: none;
-
-        .menu__button {
-            // width: 30px;
-            transition: transform 0.1s ease;
-
-            &:hover {
-                .button__line {
-                    &:nth-child(1) {
-                        transform: rotateZ(36deg) scaleX(1.12);
-                    }
-    
-                    &:nth-child(2) {
-                        transform: scaleX(0);
-                    }
-
-                    &:nth-child(3) {
-                        transform: rotateZ(-36deg) scaleX(1.12);
-                    }
-                }
-            }
-
-            .button__line {
-                display: block;
-                width: 30px;
-                height: 3px;
-                margin-bottom: 7px;
-                background-color: white;
-                transition: transform 0.2s ease;
-                transform-origin: left;
-                
-                &:last-child {
-                    margin-bottom: 0;
-                }
-
-                &:nth-child(2) {
-                    width: 24px;
-                    margin-left: auto;
-                }
-            }
-        }
 
         .menu__item {
             margin-right: 32px;
@@ -91,6 +51,58 @@
             &:hover::after {
                 transform: scaleX(1);
             }
+        }
+    }
+
+    .menu__button {
+        display: none;
+        margin-left: auto;
+        transition: transform 0.1s ease;
+
+        &:hover {
+            .button__line {
+                &:nth-child(1) {
+                    transform: rotateZ(36deg) scaleX(1.12);
+                }
+
+                &:nth-child(2) {
+                    transform: scaleX(0);
+                }
+
+                &:nth-child(3) {
+                    transform: rotateZ(-36deg) scaleX(1.12);
+                }
+            }
+        }
+
+        .button__line {
+            display: block;
+            width: 30px;
+            height: 3px;
+            margin-bottom: 7px;
+            background-color: white;
+            transition: transform 0.2s ease;
+            transform-origin: left;
+            outline: 1px solid transparent;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:nth-child(2) {
+                width: 24px;
+                margin-left: auto;
+            }
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        &__menu {
+            display: none;
+        }
+        
+        .menu__button {
+            display: inline-block;
         }
     }
 }

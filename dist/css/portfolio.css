@@ -35,7 +35,7 @@
   padding-top: 24px;
   padding-bottom: 24px;
   font-family: "Mukta", sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
   position: fixed;
   top: 0;
@@ -53,41 +53,6 @@
   margin-left: auto;
   padding: 0;
   list-style-type: none;
-}
-
-.navigation__menu .menu__button {
-  transition: transform 0.1s ease;
-}
-
-.navigation__menu .menu__button:hover .button__line:nth-child(1) {
-  transform: rotateZ(36deg) scaleX(1.12);
-}
-
-.navigation__menu .menu__button:hover .button__line:nth-child(2) {
-  transform: scaleX(0);
-}
-
-.navigation__menu .menu__button:hover .button__line:nth-child(3) {
-  transform: rotateZ(-36deg) scaleX(1.12);
-}
-
-.navigation__menu .menu__button .button__line {
-  display: block;
-  width: 30px;
-  height: 3px;
-  margin-bottom: 7px;
-  background-color: white;
-  transition: transform 0.2s ease;
-  transform-origin: left;
-}
-
-.navigation__menu .menu__button .button__line:last-child {
-  margin-bottom: 0;
-}
-
-.navigation__menu .menu__button .button__line:nth-child(2) {
-  width: 24px;
-  margin-left: auto;
 }
 
 .navigation__menu .menu__item {
@@ -122,6 +87,53 @@
   transform: scaleX(1);
 }
 
+.navigation .menu__button {
+  display: none;
+  margin-left: auto;
+  transition: transform 0.1s ease;
+}
+
+.navigation .menu__button:hover .button__line:nth-child(1) {
+  transform: rotateZ(36deg) scaleX(1.12);
+}
+
+.navigation .menu__button:hover .button__line:nth-child(2) {
+  transform: scaleX(0);
+}
+
+.navigation .menu__button:hover .button__line:nth-child(3) {
+  transform: rotateZ(-36deg) scaleX(1.12);
+}
+
+.navigation .menu__button .button__line {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin-bottom: 7px;
+  background-color: white;
+  transition: transform 0.2s ease;
+  transform-origin: left;
+  outline: 1px solid transparent;
+}
+
+.navigation .menu__button .button__line:last-child {
+  margin-bottom: 0;
+}
+
+.navigation .menu__button .button__line:nth-child(2) {
+  width: 24px;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 992px) {
+  .navigation__menu {
+    display: none;
+  }
+  .navigation .menu__button {
+    display: inline-block;
+  }
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -129,6 +141,10 @@
 ::selection {
   background-color: rgba(105, 81, 249, 0.9);
   color: white;
+}
+
+html {
+  font-size: 16px;
 }
 
 body {
@@ -195,7 +211,7 @@ button {
   width: 100%;
   height: 100%;
   outline: 1px solid transparent;
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .portfolio__bg .bg__wrapper:nth-child(1) {
@@ -256,5 +272,16 @@ button {
 .portfolio__heading-2 {
   font-size: 4rem;
   font-weight: 300;
+}
+
+.portfolio .console__button {
+  width: 32px;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
+.portfolio .console__button svg {
+  fill: white;
 }
 /*# sourceMappingURL=portfolio.css.map */

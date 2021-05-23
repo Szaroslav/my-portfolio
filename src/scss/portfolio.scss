@@ -13,6 +13,10 @@
     color: white;
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
     margin: 0;
     background-color: $main-dark;
@@ -74,7 +78,7 @@ button {
                 width: 100%;
                 height: 100%;
                 outline: 1px solid transparent;
-                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
             }
 
             &:nth-child(1) {
@@ -172,5 +176,16 @@ button {
     &__heading-2 {
         font-size: 4rem;
         font-weight: 300;
+    }
+
+    .console__button {
+        width: 32px;
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+
+        svg {
+            fill: white;
+        }
     }
 }
