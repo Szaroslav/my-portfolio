@@ -1,7 +1,17 @@
 @import 'colors';
 @import 'fonts';
+@import 'responsive';
 
 @import 'navigation';
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: rgba($dark-purple-dark, 0.9);
+    color: white;
+}
 
 body {
     margin: 0;
@@ -11,6 +21,22 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+input, textarea, button {
+    border: none;
+    outline: none;
+}
+
+button {
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .portfolio {
