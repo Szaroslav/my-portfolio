@@ -26,7 +26,7 @@ eval("(function(f){if(true){module.exports=f()}else { var g; }})(function(){var 
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var parallax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! parallax-js */ \"./node_modules/parallax-js/dist/parallax.js\");\n/* harmony import */ var parallax_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(parallax_js__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n    const parallax = new (parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(document.querySelector('.portfolio__bg'), {\r\n        selector: '.bg__element'\r\n    });\r\n\r\n    console.log(\"lol\");\r\n});\n\n//# sourceURL=webpack://js-portfolio/./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var parallax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! parallax-js */ \"./node_modules/parallax-js/dist/parallax.js\");\n/* harmony import */ var parallax_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(parallax_js__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n    const parallax = new (parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(document.querySelector('.portfolio__bg'), {\r\n        invertX: false,\r\n        invertY: false,\r\n        selector: '.bg__element'\r\n    });\r\n\r\n    console.log(\"lol\");\r\n});\n\n//# sourceURL=webpack://js-portfolio/./src/js/index.js?");
 
 /***/ })
 

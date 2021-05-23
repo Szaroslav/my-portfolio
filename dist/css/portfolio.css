@@ -8,6 +8,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+.portfolio {
+  min-height: 100vh;
+  position: relative;
+}
+
 .portfolio__bg {
   width: 100%;
   height: 100%;
@@ -40,6 +45,8 @@ h1, h2, h3, h4, h5, h6 {
 .portfolio__bg .bg__wrapper .bg__element {
   width: 100%;
   height: 100%;
+  outline: 1px solid transparent;
+  -webkit-backface-visibility: hidden;
 }
 
 .portfolio__bg .bg__wrapper:nth-child(1) {
@@ -47,6 +54,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 150px;
   top: 100px;
   left: 50px;
+  transform: rotateZ(20deg);
 }
 
 .portfolio__bg .bg__wrapper:nth-child(2) {
@@ -54,6 +62,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 500px;
   top: -130px;
   right: -40px;
+  transform: rotateZ(75deg);
 }
 
 .portfolio__bg .bg__wrapper:nth-child(3) {
@@ -61,6 +70,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100px;
   bottom: 120px;
   right: 350px;
+  transform: rotateZ(-12deg);
 }
 
 .portfolio__bg .bg__wrapper:nth-child(4) {
@@ -68,20 +78,34 @@ h1, h2, h3, h4, h5, h6 {
   height: 400px;
   bottom: -45px;
   left: -100px;
+  transform: rotateZ(65deg);
+}
+
+.portfolio__bg .bg__wrapper:nth-child(5) {
+  width: 90px;
+  height: 90px;
+  bottom: 100px;
+  left: 500px;
+  transform: rotateZ(45deg);
 }
 
 .portfolio__headings {
   font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
   text-align: center;
   text-transform: uppercase;
 }
 
 .portfolio__heading-1 {
-  font-size: 4rem;
+  font-size: 6rem;
 }
 
 .portfolio__heading-2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 300;
 }
 /*# sourceMappingURL=portfolio.css.map */

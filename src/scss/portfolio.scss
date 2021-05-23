@@ -1,6 +1,8 @@
 @import 'colors';
 @import 'fonts';
 
+@import 'navigation';
+
 body {
     margin: 0;
     background-color: $main-dark;
@@ -12,6 +14,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .portfolio {
+    min-height: 100vh;
+    position: relative;
+
     &__bg {
         width: 100%;
         height: 100%;
@@ -42,6 +47,8 @@ h1, h2, h3, h4, h5, h6 {
             .bg__element {
                 width: 100%;
                 height: 100%;
+                outline: 1px solid transparent;
+                -webkit-backface-visibility: hidden;
             }
 
             &:nth-child(1) {
@@ -49,7 +56,8 @@ h1, h2, h3, h4, h5, h6 {
                 height: 150px;
                 top: 100px;
                 left: 50px;
-                // transform: rotateZ(20deg);
+                transform: rotateZ(20deg);
+                //animation: 10s infinite alternate bg-anim-1;
             }
 
             &:nth-child(2) {
@@ -57,7 +65,8 @@ h1, h2, h3, h4, h5, h6 {
                 height: 500px;
                 top: -130px;
                 right: -40px;
-                // transform: rotateZ(75deg);
+                transform: rotateZ(75deg);
+                //animation: 10s infinite alternate bg-anim-2;
             }
 
             &:nth-child(3) {
@@ -65,7 +74,8 @@ h1, h2, h3, h4, h5, h6 {
                 height: 100px;
                 bottom: 120px;
                 right: 350px;
-                // transform: rotateZ(-12deg);
+                transform: rotateZ(-12deg);
+                //animation: 10s infinite alternate bg-anim-3;
             }
 
             &:nth-child(4) {
@@ -73,23 +83,68 @@ h1, h2, h3, h4, h5, h6 {
                 height: 400px;
                 bottom: -45px;
                 left: -100px;
-                // transform: rotateZ(65deg);
+                transform: rotateZ(65deg);
+                //animation: 10s infinite alternate bg-anim-4;
+            }
+
+            &:nth-child(5) {
+                width: 90px;
+                height: 90px;
+                bottom: 100px;
+                left: 500px;
+                transform: rotateZ(45deg);
+                //animation: 10s infinite alternate bg-anim-5;
             }
         }
+
+        // @keyframes bg-anim-1 {
+        //     to {
+        //         transform: rotateZ(20deg) translateY(-25%);
+        //     }
+        // }
+
+        // @keyframes bg-anim-2 {
+        //     to {
+        //         transform: rotateZ(75deg) translate(-10%, -20%);
+        //     }
+        // }
+
+        // @keyframes bg-anim-3 {
+        //     to {
+        //         transform: rotateZ(-12deg) translate(10%, -15%);
+        //     }
+        // }
+
+        // @keyframes bg-anim-4 {
+        //     to {
+        //         transform: rotateZ(65deg) translateY(25%);
+        //     }
+        // }
+
+        // @keyframes bg-anim-5 {
+        //     to {
+        //         transform: rotateZ(45deg) translate(5%, 25%);
+        //     }
+        // }
     }
 
     &__headings {
         font-family: $main-font;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        transform: translate(-50%, -50%);
         text-align: center;
         text-transform: uppercase;
     }
 
     &__heading-1 {
-        font-size: 4rem;
+        font-size: 6rem;
     }
 
     &__heading-2 {
-        font-size: 2.5rem;
+        font-size: 4rem;
         font-weight: 300;
     }
 }
