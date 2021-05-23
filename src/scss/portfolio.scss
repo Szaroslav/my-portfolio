@@ -178,6 +178,20 @@ button {
         font-weight: 300;
     }
 
+    .Typewriter__cursor {
+        animation: 0.5s steps(2, jump-start) infinite alternate cursor-anim;
+
+        @keyframes cursor-anim {
+            from {
+                visibility: visible;
+            }
+
+            to {
+                visibility: hidden;
+            }
+        }
+    }
+
     .console__button {
         width: 32px;
         position: absolute;
