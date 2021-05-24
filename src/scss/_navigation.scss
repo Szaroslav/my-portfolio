@@ -8,48 +8,51 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
 
     &__container {
         display: flex;
     }
 
     &__menu {
-        display: flex;
-        margin: 0;
         margin-left: auto;
-        padding: 0;
-        list-style-type: none;
 
-        .menu__item {
-            margin-right: 32px;
+        .menu__content {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
 
-            &:last-child {
-                margin-right: 0;
+            .menu__item {
+                margin-right: 32px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
             }
-        }
 
-        .menu__link {
-            display: inline-block;
-            padding: 4px;
-            position: relative;
-
-            &::after {
-                content: '';
+            .menu__link {
                 display: inline-block;
-                width: calc(100% - 8px);
-                height: 2px;
-                background-color: white;
-                position: absolute;
-                bottom: 0;
-                left: 4px;
-                transform: scaleX(0);
-                transform-origin: center;
-                transition: transform 0.25s ease;
-            }
+                padding: 4px;
+                position: relative;
 
-            &:hover::after {
-                transform: scaleX(1);
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: calc(100% - 8px);
+                    height: 2px;
+                    background-color: white;
+                    position: absolute;
+                    bottom: 2px;
+                    left: 4px;
+                    transform: scaleX(0);
+                    transform-origin: center;
+                    transition: transform 0.25s ease;
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                }
             }
         }
     }
@@ -57,23 +60,25 @@
     .menu__button {
         display: none;
         margin-left: auto;
+        position: relative;
+        z-index: 5;
         transition: transform 0.1s ease;
 
-        &:hover {
-            .button__line {
-                &:nth-child(1) {
-                    transform: rotateZ(36deg) scaleX(1.12);
-                }
+        // &:hover {
+        //     .button__line {
+        //         &:nth-child(1) {
+        //             transform: rotateZ(36deg) scaleX(1.12);
+        //         }
 
-                &:nth-child(2) {
-                    transform: scaleX(0);
-                }
+        //         &:nth-child(2) {
+        //             transform: scaleX(0);
+        //         }
 
-                &:nth-child(3) {
-                    transform: rotateZ(-36deg) scaleX(1.12);
-                }
-            }
-        }
+        //         &:nth-child(3) {
+        //             transform: rotateZ(-36deg) scaleX(1.12);
+        //         }
+        //     }
+        // }
 
         .button__line {
             display: block;
@@ -96,9 +101,120 @@
         }
     }
 
+    &.open .menu__button {
+        .button__line {
+            &:nth-child(1) {
+                transform: rotateZ(36deg) scaleX(1.12);
+            }
+
+            &:nth-child(2) {
+                transform: scaleX(0);
+            }
+
+            &:nth-child(3) {
+                transform: rotateZ(-36deg) scaleX(1.12);
+            }
+        }
+    }
+
     @media screen and (max-width: 992px) {
         &__menu {
-            display: none;
+            width: 100%;
+            height: 100vh;
+            margin-left: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.2s ease, opacity 0.2s ease;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($main-dark, 0.9875);
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: scaleY(0);
+                transform-origin: top;
+                transition: transform 0.5s ease, opacity 0.4s ease;
+                opacity: 0.5;
+
+                // @supports (backdrop-filter: blur(20px)) {
+                //     background-color: transparent;
+                //     backdrop-filter: blur(20px);
+                // }
+            }
+
+            .menu__content {
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                .menu__item {
+                    margin-right: 0;
+                    margin-bottom: 24px;
+                    transform: translateY(-10px);
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.2s ease 0;
+    
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .menu__link {
+                    padding: 12px;
+                }
+            }
+
+            &.open {
+                visibility: visible;
+                opacity: 1;
+                transition: unset;
+
+                &::before {
+                    transform: scaleY(1);
+                    opacity: 1;
+                }
+
+                .menu__item {
+                    transform: translateY(0);
+                    visibility: visible;
+                    opacity: 1;
+                    transition: all 0.3s ease;
+
+                    @for $i from 1 through 10 {
+                        &:nth-child(#{$i}) {
+                            transition-delay: 0.1s + $i * 0.125s;
+                        }
+                    }
+                }
+            }
+
+            // &::before {
+            //     content: '';
+            //     display: block;
+            //     width: 100%;
+            //     height: 100vh;
+            //     background-color: rgba($main-dark, 0.95);
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+
+            //     @supports (backdrop-filter: blur(20px)) {
+            //         background-color: transparent;
+            //         backdrop-filter: blur(20px);
+            //     }
+            // }
         }
         
         .menu__button {

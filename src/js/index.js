@@ -1,6 +1,8 @@
 import Parallax from 'parallax-js';
 import Typewriter from 'typewriter-effect/dist/core';
 
+import navigation from './navigation';
+
 window.addEventListener('DOMContentLoaded', () => {
     const parallax = new Parallax(document.querySelector('.portfolio__bg'), {
         invertX: false,
@@ -16,4 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
         cursor: '_',
         skipAddStyles: true
     });
+
+    navigation();
 });
