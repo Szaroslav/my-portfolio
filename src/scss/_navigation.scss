@@ -1,6 +1,17 @@
 @use 'colors';
 @use 'fonts';
 
+@mixin menu-link($padding) {
+    & {
+        padding: $padding;
+
+        &::after {
+            width: calc(100% - 2 * #{$padding});
+            left: $padding;
+        }
+    }
+}
+
 .navigation {
     width: 100%;
     padding-top: 24px;
@@ -36,18 +47,16 @@
 
             .menu__link {
                 display: inline-block;
-                padding: 4px;
                 position: relative;
+                @include menu-link(4px);
 
                 &::after {
                     content: '';
                     display: inline-block;
-                    width: calc(100% - 8px);
                     height: 2px;
                     background-color: white;
                     position: absolute;
                     bottom: 2px;
-                    left: 4px;
                     transform: scaleX(0);
                     transform-origin: center;
                     transition: transform 0.25s ease;
@@ -125,6 +134,7 @@
             width: 100%;
             height: 100vh;
             margin-left: 0;
+            font-size: 20px;
             position: absolute;
             top: 0;
             left: 0;
@@ -163,7 +173,7 @@
 
                 .menu__item {
                     margin-right: 0;
-                    margin-bottom: 24px;
+                    margin-bottom: 12px;
                     transform: translateY(-10px);
                     visibility: hidden;
                     opacity: 0;
@@ -175,7 +185,7 @@
                 }
 
                 .menu__link {
-                    padding: 12px;
+                    @include menu-link(12px);
                 }
             }
 

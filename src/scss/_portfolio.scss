@@ -1,5 +1,6 @@
 @use 'colors';
 @use 'fonts';
+@use 'responsive';
 
 .portfolio {
     min-height: 100vh;
@@ -45,7 +46,6 @@
                 top: 100px;
                 left: 100px;
                 transform: rotateZ(20deg);
-                //animation: 10s infinite alternate bg-anim-1;
             }
 
             &:nth-child(2) {
@@ -54,7 +54,6 @@
                 top: -130px;
                 right: -40px;
                 transform: rotateZ(75deg);
-                //animation: 10s infinite alternate bg-anim-2;
             }
 
             &:nth-child(3) {
@@ -63,7 +62,6 @@
                 bottom: 120px;
                 right: 350px;
                 transform: rotateZ(-12deg);
-                //animation: 10s infinite alternate bg-anim-3;
             }
 
             &:nth-child(4) {
@@ -72,7 +70,6 @@
                 bottom: -45px;
                 left: -100px;
                 transform: rotateZ(65deg);
-                //animation: 10s infinite alternate bg-anim-4;
             }
 
             &:nth-child(5) {
@@ -81,7 +78,89 @@
                 bottom: 100px;
                 left: 500px;
                 transform: rotateZ(45deg);
-                //animation: 10s infinite alternate bg-anim-5;
+            }
+
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}) {
+                    z-index: $i;
+                }
+            }
+
+            @media screen and (max-width: 992px) {
+                &:nth-child(1) {
+                    width: 70px;
+                    height: 70px;
+                    top: 100px;
+                    left: 50px;
+                    //animation: 10s infinite alternate bg-anim-1;
+                }
+    
+                &:nth-child(2) {
+                    width: 200px;
+                    height: 200px;
+                    top: -80px;
+                    right: -20px;
+                    //animation: 10s infinite alternate bg-anim-2;
+                }
+    
+                &:nth-child(3) {
+                    width: 60px;
+                    height: 60px;
+                    bottom: 100px;
+                    right: 80px;
+                    //animation: 10s infinite alternate bg-anim-3;
+                }
+    
+                &:nth-child(4) {
+                    width: 200px;
+                    height: 200px;
+                    bottom: -60px;
+                    left: -50px;
+                    //animation: 10s infinite alternate bg-anim-4;
+                }
+    
+                &:nth-child(5) {
+                    display: none;
+                    // transform: rotateZ(45deg);
+                    //animation: 10s infinite alternate bg-anim-5;
+                }
+            }
+
+            @media screen and (max-width: 1366px) {
+                &:nth-child(1) {
+                    width: 120px;
+                    height: 120px;
+                    top: 100px;
+                    left: 100px;
+                }
+    
+                &:nth-child(2) {
+                    width: 400px;
+                    height: 400px;
+                    top: -130px;
+                    right: -40px;
+                }
+    
+                &:nth-child(3) {
+                    width: 90px;
+                    height: 90px;
+                    bottom: 120px;
+                    right: 300px;
+                }
+    
+                &:nth-child(4) {
+                    width: 300px;
+                    height: 300px;
+                    bottom: -45px;
+                    left: -100px;
+                }
+    
+                &:nth-child(5) {
+                    width: 80px;
+                    height: 80px;
+                    bottom: 100px;
+                    left: 400px;
+                }
             }
         }
 
@@ -128,11 +207,11 @@
     }
 
     &__heading-1 {
-        font-size: 6rem;
+        @include responsive.f-font-size(44px, 96px);
     }
 
     &__heading-2 {
-        font-size: 4rem;
+        @include responsive.f-font-size(30px, 64px);
         font-weight: 300;
     }
 
