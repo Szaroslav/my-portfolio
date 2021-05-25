@@ -1,0 +1,44 @@
+@use 'colors';
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: rgba(colors.$dark-purple-dark, 0.9);
+    color: white;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background-color: colors.$main-dark;
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+input, textarea, button {
+    border: none;
+    outline: none;
+}
+
+input, textarea,button, select, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+}

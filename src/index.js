@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect/dist/core';
 
 import navigation from './js/navigation';
 
-import './scss/portfolio.scss';
+import './scss/index.scss';
 
 window.addEventListener('DOMContentLoaded', () => {
     const parallax = new Parallax(document.querySelector('.portfolio__bg'), {
