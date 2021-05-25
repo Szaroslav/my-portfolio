@@ -1,15 +1,15 @@
-@import 'colors';
-@import 'fonts';
-@import 'responsive';
+@use 'colors';
+@use 'fonts';
+@use 'responsive';
 
-@import 'navigation';
+// @use 'navigation';
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 ::selection {
-    background-color: rgba($dark-purple-dark, 0.9);
+    background-color: rgba(colors.$dark-purple-dark, 0.9);
     color: white;
 }
 
@@ -19,7 +19,7 @@ html {
 
 body {
     margin: 0;
-    background-color: $main-dark;
+    background-color: colors.$main-dark;
     color: white;
 }
 
@@ -60,19 +60,19 @@ button {
         overflow: hidden;
 
         .bg--turquoise {
-            background-image: linear-gradient(135deg, $turquoise-light, $turquoise-dark);
+            background-image: linear-gradient(135deg, colors.$turquoise-light, colors.$turquoise-dark);
         }
 
         .bg--dark-purple {
-            background-image: linear-gradient(135deg, $dark-purple-light, $dark-purple-dark);
+            background-image: linear-gradient(135deg, colors.$dark-purple-light, colors.$dark-purple-dark);
         }
 
         .bg--purple {
-            background-image: linear-gradient(135deg, $purple-light, $purple-dark);
+            background-image: linear-gradient(135deg, colors.$purple-light, colors.$purple-dark);
         }
 
         .bg--rose {
-            background-image: linear-gradient(135deg, $rose-light, $rose-dark);
+            background-image: linear-gradient(135deg, colors.$rose-light, colors.$rose-dark);
         }
 
         .bg__wrapper {
@@ -89,7 +89,7 @@ button {
                 width: 150px;
                 height: 150px;
                 top: 100px;
-                left: 50px;
+                left: 100px;
                 transform: rotateZ(20deg);
                 //animation: 10s infinite alternate bg-anim-1;
             }
@@ -163,7 +163,7 @@ button {
     }
 
     &__headings {
-        font-family: $main-font;
+        font-family: fonts.$main-font;
         position: absolute;
         top: 50%;
         left: 50%;

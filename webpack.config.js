@@ -1,10 +1,22 @@
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     mode: 'development',
-    entry: './src/js/index.js',
+    entry: './src/index.js',
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist',
+        hot: true
+    },
     output: {
         filename: 'main.js',
-        publicPath: 'dist'
+        path: path.resolve(__dirname, 'dist')
     },
+    plugins: [
+        new MiniCssExtractPlugin()
+    ],
     module: {
         rules: [
             {
@@ -16,6 +28,14 @@ module.exports = {
                         presets: [ '@babel/preset-env' ]
                     }
                 }
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
             }
         ]
     }
