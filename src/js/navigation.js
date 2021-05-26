@@ -1,4 +1,4 @@
-const navigation = () => {
+const initNavigation = () => {
     const button = document.querySelector('.menu__button');
     const navigation = document.querySelector('.navigation');
     const menu = document.querySelector('.navigation__menu');
@@ -9,4 +9,4 @@ const navigation = () => {
     });
 }
 
-export default navigation;
+export default initNavigation;
