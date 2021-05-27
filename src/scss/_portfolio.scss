@@ -145,7 +145,7 @@
                     width: 90px;
                     height: 90px;
                     bottom: 120px;
-                    right: 30px;
+                    right: 100px;
                 }
     
                 &:nth-child(4) {
@@ -213,6 +213,29 @@
     &__heading-2 {
         @include responsive.f-font-size(30px, 64px);
         font-weight: 300;
+    }
+
+    &__social-media {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+
+        .social-media__link {
+            display: block;
+            width: 36px;
+            height: 36px;
+            margin-right: 12px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            object {
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 
     .Typewriter__cursor {
