@@ -218,8 +218,9 @@
     &__social-media {
         display: flex;
         position: absolute;
-        bottom: 0;
+        bottom: 24px;
         left: 50%;
+        transform: translateX(-50%);
 
         .social-media__link {
             display: block;
@@ -231,9 +232,23 @@
                 margin-right: 0;
             }
 
-            object {
-                width: 100%;
-                height: 100%;
+            & > svg {
+                fill: white;
+                transition: fill 0.25s ease; 
+            }
+
+            &:hover {
+                &.social-media--github > svg {
+                    fill: colors.$dark-purple-dark;
+                }
+
+                &.social-media--linkedin > svg {
+                    fill: #0a66c2;
+                }
+
+                &.social-media--facebook > svg {
+                    fill: #1096f4;
+                }
             }
         }
     }
