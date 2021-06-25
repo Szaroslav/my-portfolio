@@ -1,6 +1,9 @@
 @use 'colors';
+@use 'fonts';
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -17,9 +20,15 @@ body {
     margin: 0;
     background-color: colors.$main-dark;
     color: white;
+    font-family: fonts.$secondary-font;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
@@ -28,12 +37,18 @@ a {
     text-decoration: none;
 }
 
-input, textarea, button {
+input,
+textarea,
+button {
     border: none;
     outline: none;
 }
 
-input, textarea,button, select, a {
+input,
+textarea,
+button,
+select,
+a {
     -webkit-tap-highlight-color: transparent;
 }
 

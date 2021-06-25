@@ -1,0 +1,42 @@
+@use 'colors';
+@use 'fonts';
+
+.portfolio__about {
+    display: flex;
+    padding: 64px 0;
+    position: relative;
+    z-index: 1;
+
+    .about__content {
+        width: 65%;
+        margin-right: 4rem;
+
+        .portfolio-text {
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .about__skills {
+        flex: auto;
+
+        .portfolio-skill {
+            &:first-of-type {
+                padding-top: 0;
+            }
+
+            &:last-of-type {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .portfolio-heading {
+        margin-bottom: 1rem;
+    }
+}

@@ -92,37 +92,31 @@
                     height: 70px;
                     top: 100px;
                     left: 50px;
-                    //animation: 10s infinite alternate bg-anim-1;
                 }
-    
+
                 &:nth-child(2) {
                     width: 200px;
                     height: 200px;
                     top: -80px;
                     right: -20px;
-                    //animation: 10s infinite alternate bg-anim-2;
                 }
-    
+
                 &:nth-child(3) {
                     width: 60px;
                     height: 60px;
                     bottom: 100px;
                     right: 80px;
-                    //animation: 10s infinite alternate bg-anim-3;
                 }
-    
+
                 &:nth-child(4) {
                     width: 200px;
                     height: 200px;
                     bottom: -60px;
                     left: -50px;
-                    //animation: 10s infinite alternate bg-anim-4;
                 }
-    
+
                 &:nth-child(5) {
                     display: none;
-                    // transform: rotateZ(45deg);
-                    //animation: 10s infinite alternate bg-anim-5;
                 }
             }
 
@@ -133,28 +127,28 @@
                     top: 100px;
                     left: 100px;
                 }
-    
+
                 &:nth-child(2) {
                     width: 400px;
                     height: 400px;
                     top: -130px;
                     right: -40px;
                 }
-    
+
                 &:nth-child(3) {
                     width: 90px;
                     height: 90px;
                     bottom: 120px;
                     right: 100px;
                 }
-    
+
                 &:nth-child(4) {
                     width: 300px;
                     height: 300px;
                     bottom: -45px;
                     left: -100px;
                 }
-    
+
                 &:nth-child(5) {
                     width: 80px;
                     height: 80px;
@@ -163,36 +157,6 @@
                 }
             }
         }
-
-        // @keyframes bg-anim-1 {
-        //     to {
-        //         transform: rotateZ(20deg) translateY(-25%);
-        //     }
-        // }
-
-        // @keyframes bg-anim-2 {
-        //     to {
-        //         transform: rotateZ(75deg) translate(-10%, -20%);
-        //     }
-        // }
-
-        // @keyframes bg-anim-3 {
-        //     to {
-        //         transform: rotateZ(-12deg) translate(10%, -15%);
-        //     }
-        // }
-
-        // @keyframes bg-anim-4 {
-        //     to {
-        //         transform: rotateZ(65deg) translateY(25%);
-        //     }
-        // }
-
-        // @keyframes bg-anim-5 {
-        //     to {
-        //         transform: rotateZ(45deg) translate(5%, 25%);
-        //     }
-        // }
     }
 
     &__headings {
@@ -234,7 +198,7 @@
 
             & > svg {
                 fill: white;
-                transition: fill 0.25s ease; 
+                transition: fill 0.25s ease;
             }
 
             &:hover {
@@ -277,4 +241,15 @@
             fill: white;
         }
     }
+}
+
+.portfolio-heading {
+    font: 800 2.25rem fonts.$main-font;
+    text-transform: uppercase;
+}
+
+.portfolio-text {
+    margin: 0.75rem 0;
+    font-weight: 300;
+    line-height: 1.2;
 }

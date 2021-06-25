@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap" />
-        <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" />
+        <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500&display=swap" rel="stylesheet" />
         <title>Portfolio</title>
     <script defer src="main.bundle.js"></script><link href="main.css" rel="stylesheet"></head>
     <body>
@@ -46,22 +46,79 @@
                 <h1 class="portfolio__heading-1">Szaredko</h1>
             </div>
             <div class="portfolio__about container">
-                <h2>About me</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque libero sed nisi facilisis, et suscipit metus
-                    vulputate. Pellentesque feugiat vulputate purus id pellentesque. Etiam pretium nunc felis, id hendrerit libero mattis eget. Fusce
-                    scelerisque purus non enim ultrices tincidunt. Cras pharetra vestibulum malesuada. Nam eu est sed lacus tristique finibus.
-                    Phasellus et semper dui, eu egestas libero. Vestibulum tempor lacus quis justo faucibus, sed accumsan arcu pretium. Vestibulum eu
-                    diam at arcu mollis malesuada vitae nec erat. Pellentesque fermentum purus elit. Ut erat nulla, pulvinar quis euismod a, fermentum
-                    vitae dolor. Nullam in bibendum magna.
-                </p>
-                <p>
-                    Nam aliquet orci nec lorem vehicula, et mollis eros pretium. Proin tristique mauris neque, ut auctor odio aliquet id. Vivamus
-                    lobortis et tortor quis tincidunt. Integer dignissim bibendum laoreet. Mauris rhoncus orci hendrerit lectus facilisis sodales. Sed
-                    dictum elit vitae mauris pretium, a tincidunt leo auctor. Morbi urna nisi, rhoncus in sapien at, hendrerit lacinia erat. Mauris
-                    pretium lorem vel erat ornare, sed sagittis leo ornare. Fusce eleifend nulla ut augue vestibulum, vel rutrum sem hendrerit. Aenean
-                    gravida leo ac lectus vestibulum mattis id vel libero.
-                </p>
+                <div class="about__content">
+                    <h2 class="portfolio-heading">About me</h2>
+                    <p class="portfolio-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque libero sed nisi facilisis, et suscipit metus
+                        vulputate. Pellentesque feugiat vulputate purus id pellentesque. Etiam pretium nunc felis, id hendrerit libero mattis eget.
+                        Fusce scelerisque purus non enim ultrices tincidunt. Cras pharetra vestibulum malesuada. Nam eu est sed lacus tristique
+                        finibus. Phasellus et semper dui, eu egestas libero. Vestibulum tempor lacus quis justo faucibus, sed accumsan arcu pretium.
+                        Vestibulum eu diam at arcu mollis malesuada vitae nec erat. Pellentesque fermentum purus elit. Ut erat nulla, pulvinar quis
+                        euismod a, fermentum vitae dolor. Nullam in bibendum magna.
+                    </p>
+                    <p class="portfolio-text">
+                        Nam aliquet orci nec lorem vehicula, et mollis eros pretium. Proin tristique mauris neque, ut auctor odio aliquet id. Vivamus
+                        lobortis et tortor quis tincidunt. Integer dignissim bibendum laoreet. Mauris rhoncus orci hendrerit lectus facilisis sodales.
+                        Sed dictum elit vitae mauris pretium, a tincidunt leo auctor. Morbi urna nisi, rhoncus in sapien at, hendrerit lacinia erat.
+                        Mauris pretium lorem vel erat ornare, sed sagittis leo ornare. Fusce eleifend nulla ut augue vestibulum, vel rutrum sem
+                        hendrerit. Aenean gravida leo ac lectus vestibulum mattis id vel libero.
+                    </p>
+                </div>
+                <div class="about__skills">
+                    <h2 class="portfolio-heading">Skills</h2>
+                    <ul class="skills__list">
+                        <li class="skills__skill">HTML</li>
+                        <li class="skills__skill">CSS/SCSS</li>
+                        <li class="skills__skill">JavaScript</li>
+                        <li class="skills__skill">Unity 2D</li>
+                        <li class="skills__skill">C#</li>
+                        <li class="skills__skill">C++</li>
+                        <li class="skills__skill">PHP</li>
+                        <li class="skills__skill">Adobe Photoshop</li>
+                        <li class="skills__skill">Adobe Illustrator</li>
+                        <li class="skills__skill">Adobe XD</li>
+                    </ul>
+                    <!-- <div class="portfolio-skill skill--html" data-value=90">
+                        <p class="skill-name">HTML</p>
+                        <div class="progress progress--dark-purple progress--90"></div>
+                    </div>
+                    <div class="portfolio-skill skill--css" data-value="85">
+                        <p class="skill-name">CSS/SCSS</p>
+                        <div class="progress progress--turquoise progress--85"></div>
+                    </div>
+                    <div class="portfolio-skill skill--javascript" data-value="85">
+                        <p class="skill-name">JavaScript</p>
+                        <div class="progress progress--purple progress--85"></div>
+                    </div>
+                    <div class="portfolio-skill skill--unity2d" data-value="85">
+                        <p class="skill-name">Unity 2D</p>
+                        <div class="progress progress--rose progress--85"></div>
+                    </div>
+                    <div class="portfolio-skill skill--csharp" data-value="70">
+                        <p class="skill-name">C#</p>
+                        <div class="progress progress--turquoise progress--70"></div>
+                    </div>
+                    <div class="portfolio-skill skill--cpp" data-value="55">
+                        <p class="skill-name">C++</p>
+                        <div class="progress progress--dark-purple progress--55"></div>
+                    </div>
+                    <div class="portfolio-skill skill--php" data-value="70">
+                        <p class="skill-name">PHP</p>
+                        <div class="progress progress--rose progress--70"></div>
+                    </div>
+                    <div class="portfolio-skill skill--photoshop" data-value="75">
+                        <p class="skill-name">Adobe Photoshop</p>
+                        <div class="progress progress--purple progress--75"></div>
+                    </div>
+                    <div class="portfolio-skill skill--illustrator" data-value="75">
+                        <p class="skill-name">Adobe Illustrator</p>
+                        <div class="progress progress--dark-purple progress--75"></div>
+                    </div>
+                    <div class="portfolio-skill skill--xd" data-value="55">
+                        <p class="skill-name">Adobe XD</p>
+                        <div class="progress progress--turquoise progress--55"></div>
+                    </div> -->
+                </div>
             </div>
             <!-- <div class="portfolio__social-media">
                 <a href="https://github.com/Szaroslav" class="social-media__link social-media--github">
