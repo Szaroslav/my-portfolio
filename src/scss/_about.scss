@@ -3,15 +3,16 @@
 
 .portfolio__about {
     display: flex;
-    padding: 64px 0;
     position: relative;
     z-index: 1;
 
     .about__content {
-        width: 65%;
-        margin-right: 4rem;
+        width: 70%;
+        margin: 32px 0;
 
         .portfolio-text {
+            opacity: 0.8;
+
             &:first-of-type {
                 margin-top: 0;
             }
@@ -34,6 +35,14 @@
                 padding-bottom: 0;
             }
         }
+    }
+
+    .about__rect {
+        flex: auto;
+        margin-left: -35%;
+        background-color: #312f40;
+        position: relative;
+        z-index: -1;
     }
 
     .portfolio-heading {

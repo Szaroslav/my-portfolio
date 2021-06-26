@@ -21,6 +21,7 @@ body {
     background-color: colors.$main-dark;
     color: white;
     font-family: fonts.$secondary-font;
+    overflow-x: hidden;
 }
 
 h1,

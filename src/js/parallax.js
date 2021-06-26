@@ -1,7 +1,7 @@
 import Parallax from 'parallax-js';
 
 const initParallax = () => {
-    const parallax = new Parallax(document.querySelector('.portfolio__bg'), {
+    const parallax = new Parallax(document.querySelector('.header__bg'), {
         invertX: false,
         invertY: false,
         selector: '.bg__element'
