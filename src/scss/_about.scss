@@ -23,20 +23,6 @@
         }
     }
 
-    .about__skills {
-        flex: auto;
-
-        .portfolio-skill {
-            &:first-of-type {
-                padding-top: 0;
-            }
-
-            &:last-of-type {
-                padding-bottom: 0;
-            }
-        }
-    }
-
     .about__rect {
         flex: auto;
         margin-left: -35%;
