@@ -1,18 +1,53 @@
+@use 'colors';
+@use 'fonts';
+@use 'responsive';
+
 .portfolio__skills {
     .skills__list {
         display: flex;
         flex-wrap: wrap;
         margin: 0;
         padding: 0;
+        font-family: fonts.$main-font;
+        @include responsive.f-font-size(12px, 16px);
         gap: 16px;
         list-style-type: none;
+    }
 
+    .skills__skill {
+        width: calc((100% - 32px) / 3);
+        padding: 16px;
+        background-color: #312f40;
+        border: 1px solid #4b4861;
+        box-shadow: 0 4px 6px 3px rgba(0, 0, 0, 0.05);
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 15%;
+            min-width: 42px;
+            height: calc(100% + 2px);
+            @include colors.dark-purple-grad(-135deg);
+            position: absolute;
+            top: -1px;
+            right: 0;
+        }
+    }
+
+    @media screen and (max-width: 1279px) {
         .skills__skill {
-            width: calc((100% - 32px) / 3);
-            padding: 16px;
-            background-color: #312f40;
-            border: 1px solid #4b4861;
-            box-shadow: 0 4px 6px 3px rgba(0, 0, 0, 0.05);
+            width: calc((100% - 16px) / 2);
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .skills__list {
+            gap: 10px;
+
+            .skills__skill {
+                width: 100%;
+            }
         }
     }
 }

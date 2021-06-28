@@ -2,32 +2,54 @@
 @use 'fonts';
 @use 'responsive';
 
+main.portfolio {
+    overflow-x: hidden;
+}
+
 .portfolio-heading {
     display: inline-block;
+    margin-bottom: 1rem;
+    padding-right: 0.25em;
     font-family: fonts.$main-font;
     @include responsive.f-font-size(32px, 48px);
     font-weight: 800;
     position: relative;
     z-index: 1;
+    cursor: default;
     text-transform: uppercase;
 
     &::after {
         content: '';
         display: block;
-        width: 1.75em;
+        width: 2em;
         height: 100%;
         background-color: colors.$dark-purple-dark;
         position: absolute;
         top: 0;
         right: 0;
         z-index: -1;
-        cursor: default;
         transform-origin: right;
         transition: transform 0.2s ease;
     }
 
     &:hover::after {
         transform: scaleX(1.25);
+    }
+
+    &.portfolio-heading--turquoise::after {
+        background-color: colors.$turquoise-dark;
+    }
+
+    &.portfolio-heading--dark-purple::after {
+        background-color: colors.$dark-purple-dark;
+    }
+
+    &.portfolio-heading--purple::after {
+        background-color: colors.$purple-dark;
+    }
+
+    &.portfolio-heading--rose::after {
+        background-color: colors.$rose-dark;
     }
 }
 

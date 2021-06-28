@@ -1,3 +1,4 @@
+/* =============== Color variables =============== */
 $main-dark: #2a2836;
 $turquoise-light: #7be2f7;
 $turquoise-dark: #25c4ec;
@@ -7,3 +8,20 @@ $purple-light: #afc7fa;
 $purple-dark: #a621de;
 $rose-light: #eaa1fc;
 $rose-dark: #de2068;
+
+/* =============== Gradient mixins =============== */
+@mixin turquoise-grad($angle) {
+    background-image: linear-gradient($angle, $turquoise-light, $turquoise-dark);
+}
+
+@mixin dark-purple-grad($angle) {
+    background-image: linear-gradient($angle, $dark-purple-light, $dark-purple-dark);
+}
+
+@mixin purple-grad($angle) {
+    background-image: linear-gradient($angle, $purple-light, $purple-dark);
+}
+
+@mixin rose-grad($angle) {
+    background-image: linear-gradient($angle, $rose-light, $rose-dark);
+}

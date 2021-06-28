@@ -8,19 +8,19 @@
     left: 0;
 
     .bg--turquoise {
-        background-image: linear-gradient(135deg, colors.$turquoise-light, colors.$turquoise-dark);
+        @include colors.turquoise-grad(135deg);
     }
 
     .bg--dark-purple {
-        background-image: linear-gradient(135deg, colors.$dark-purple-light, colors.$dark-purple-dark);
+        @include colors.dark-purple-grad(135deg);
     }
 
     .bg--purple {
-        background-image: linear-gradient(135deg, colors.$purple-light, colors.$purple-dark);
+        @include colors.purple-grad(135deg);
     }
 
     .bg--rose {
-        background-image: linear-gradient(135deg, colors.$rose-light, colors.$rose-dark);
+        @include colors.rose-grad(135deg);
     }
 
     .bg__wrapper {
