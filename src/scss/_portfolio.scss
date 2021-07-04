@@ -17,6 +17,7 @@ main.portfolio {
     z-index: 1;
     cursor: default;
     text-transform: uppercase;
+    backface-visibility: hidden;
 
     &::after {
         content: '';
