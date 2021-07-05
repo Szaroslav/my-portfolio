@@ -41,8 +41,14 @@
             transition: opacity 0.3s ease;
         }
 
-        &:hover::before {
-            opacity: 0.35;
+        &:hover {
+            &::before {
+                opacity: 0.35;
+            }
+
+            .project__description {
+                color: white;
+            }
         }
     }
 
@@ -53,9 +59,7 @@
     }
 
     .project__description {
-        font-family: fonts.$secondary-font;
-        font-weight: 300;
-        @include responsive.f-font-size(14px, 16px);
+        transition: color 0.2s ease;
     }
 
     .project__tags {
@@ -87,6 +91,10 @@
             &::before {
                 opacity: 0.35;
             }
+        }
+
+        .project__description {
+            color: white;
         }
     }
 }
