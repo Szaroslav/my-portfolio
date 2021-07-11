@@ -9,7 +9,6 @@
 
     .about__content {
         width: 70%;
-        margin: 32px 0;
         margin-right: 3em;
 
         .portfolio-text {
@@ -24,7 +23,9 @@
     }
 
     .about__skills {
+        display: flex;
         flex: 1;
+        align-items: center;
 
         .skills__list {
             display: flex;

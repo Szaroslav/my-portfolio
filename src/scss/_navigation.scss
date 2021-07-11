@@ -1,5 +1,6 @@
 @use 'colors';
 @use 'fonts';
+@use 'responsive';
 
 @mixin menu-link($padding) {
     & {
@@ -19,13 +20,38 @@
     font-family: fonts.$secondary-font;
     font-size: 1rem;
     font-weight: 500;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
+    transition: all 0.3s ease;
+
+    &.fixed {
+        padding-top: 14px;
+        padding-bottom: 14px;
+        background-color: colors.$main-dark-light;
+        position: fixed;
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+
+        .navigation__title {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 
     &__container {
         display: flex;
+        align-items: center;
+    }
+
+    &__title {
+        font-family: fonts.$main-font;
+        font-weight: 800;
+        font-size: 24px;
+        text-transform: uppercase;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
     }
 
     &__menu {
@@ -76,22 +102,6 @@
         z-index: 5;
         transition: transform 0.1s ease;
 
-        // &:hover {
-        //     .button__line {
-        //         &:nth-child(1) {
-        //             transform: rotateZ(36deg) scaleX(1.12);
-        //         }
-
-        //         &:nth-child(2) {
-        //             transform: scaleX(0);
-        //         }
-
-        //         &:nth-child(3) {
-        //             transform: rotateZ(-36deg) scaleX(1.12);
-        //         }
-        //     }
-        // }
-
         .button__line {
             display: block;
             width: 30px;
@@ -133,15 +143,16 @@
         &__menu {
             width: 100%;
             height: 100vh;
-            min-height: 350px;
             margin-left: 0;
+            padding: 40px 0;
             font-size: 20px;
             position: absolute;
             top: 0;
             left: 0;
-            z-index: -1;
+            z-index: 1;
             visibility: hidden;
             opacity: 0;
+            overflow: auto;
             transition: visibility 0.2s ease, opacity 0.2s ease;
 
             &::before {
@@ -157,16 +168,15 @@
                 transform-origin: top;
                 transition: transform 0.5s ease, opacity 0.4s ease;
                 opacity: 0.5;
-
-                // @supports (backdrop-filter: blur(20px)) {
-                //     background-color: transparent;
-                //     backdrop-filter: blur(20px);
-                // }
             }
 
             .menu__content {
+                height: 100%;
+                max-height: 300px;
+                margin: 0 auto;
                 flex-direction: column;
                 align-items: center;
+                justify-content: space-around;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -174,7 +184,6 @@
 
                 .menu__item {
                     margin-right: 0;
-                    margin-bottom: 12px;
                     transform: translateY(-10px);
                     visibility: hidden;
                     opacity: 0;
@@ -186,7 +195,7 @@
                 }
 
                 .menu__link {
-                    @include menu-link(12px);
+                    @include menu-link(4px);
                 }
             }
 
@@ -213,22 +222,6 @@
                     }
                 }
             }
-
-            // &::before {
-            //     content: '';
-            //     display: block;
-            //     width: 100%;
-            //     height: 100vh;
-            //     background-color: rgba($main-dark, 0.95);
-            //     position: absolute;
-            //     top: 0;
-            //     left: 0;
-
-            //     @supports (backdrop-filter: blur(20px)) {
-            //         background-color: transparent;
-            //         backdrop-filter: blur(20px);
-            //     }
-            // }
         }
 
         .menu__button {
