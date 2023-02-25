@@ -2,19 +2,26 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.ts',
+
     output: {
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, '../public'),
+        filename: '[name].[hash].bundle.js',
+        assetModuleFilename: '[name].[hash][ext]',
         clean: true
     },
+
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/template.html'
-        })
+            template: './src/index.html'
+        }),
+        new CleanWebpackPlugin()
     ],
+
     module: {
         rules: [
             {
@@ -26,6 +33,11 @@ module.exports = {
                         presets: [ '@babel/preset-env' ]
                     }
                 }
+            },
+            {
+                test: /\.([cm]?ts|tsx)$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'ts-loader'
             },
             {
                 test: /\.html$/i,
@@ -44,5 +56,14 @@ module.exports = {
                 type: 'asset/resource'
             }
         ]
+    },
+
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js'],
+        extensionAlias: {
+            '.js': ['.js', '.ts'],
+            '.cjs': ['.cjs', '.cts'],
+            '.mjs': ['.mjs', '.mts']
+        }
     }
 };
