@@ -58,3 +58,11 @@ button {
     background-color: transparent;
     cursor: pointer;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0 100px colors.$main-dark inset !important;
+}
