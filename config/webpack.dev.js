@@ -4,6 +4,7 @@ const common = require('./webpack.common');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = env => {
     return merge(common, {
@@ -25,7 +26,10 @@ module.exports = env => {
                 {
                     reload: env.WEBPACK_SERVE ? false : true
                 }
-            )
+            ),
+            new CleanWebpackPlugin({
+                cleanAfterEveryBuildPatterns: [ '!*.mp4' ]
+            })
         ],
         devServer: env.WEBPACK_SERVE ? {
             static: {
